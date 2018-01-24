@@ -71,29 +71,29 @@
   </style>
 
   <script>
+  const secondHand = document.querySelector('.second-hand');
+  const minHand = document.querySelector('.min-hand');
+  const hourHand = document.querySelector('.hour-hand');
   
   function setDate() {
     const now = new Date();
 
-    const secondHand = document.querySelector('.second-hand');    
-    const seconds= now.getSeconds();
-    const secondsDegrees = ((seconds / 60) * 360) + 90;
-    secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+    const seconds = now.getSeconds();
+    const secondDeg = ((seconds / 60) * 360) +  90;
+    secondHand.style.transform = `rotate(${secondDeg}deg)`;
 
-    const minHand = document.querySelector('.min-hand');
-    const minutes= now.getMinutes();
-    const minDegrees = ((minutes / 60) * 360) + 90;
-    minHand.style.transform = `rotate(${minDegrees}deg)`;
-
-    const hoursHand = document.querySelector('.hour-hand');
-    const hours= now.getHours();
-    const hoursDegrees = ((hours / 12) * 360) + 90;
-    hoursHand.style.transform = `rotate(${hoursDegrees}deg)`;
-
-  } 
+    const minutes = now.getMinutes();
+    const minutesDeg = ((minutes / 60) * 360) +  90;
+    minHand.style.transform = `rotate(${minutesDeg}deg)`;
+    
+    const hours = now.getHours();
+    const hourDeg = ((hours / 60) * 360) +  90;
+    hourHand.style.transform = `rotate(${hourDeg}deg)`;    
+  }
 
   setInterval(setDate, 1000);
 
+  setDate();
 
   </script>
 </body>
